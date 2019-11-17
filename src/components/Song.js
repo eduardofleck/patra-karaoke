@@ -3,7 +3,7 @@ import React from "react";
 class Song extends React.Component{
 
 handleClick = () => {
-    this.props.removeSong(this.props.details);
+    this.props.removeSong(this.props.index);
 }
 
     render(){
@@ -11,8 +11,24 @@ handleClick = () => {
 
         return (
             <li className="menu-fish">
-                <h4>{song} - {singer} - {name}</h4>
-                <button onClick={this.handleClick}>Remove</button>
+                <div className="song">
+                    <div>
+                        <img src="/images/vinyl.png" alt="Vinyl"/>
+                    </div>
+                    <div>
+                        <div className="song-info">
+                            <div>
+                                {song} - {singer}
+                            </div>
+                            <div>
+                                {name}
+                            </div>
+                            <div>
+                                <button onClick={this.handleClick}>Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
         )
     }

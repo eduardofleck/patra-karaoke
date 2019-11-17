@@ -30,25 +30,13 @@ class App extends React.Component{
          console.log('musics');
     }
 
-    removeSong = songToRemove => {
-        console.log('Removing song');
-        console.log(songToRemove.id);
-
-        const songs = Array.from({ ...this.state.songs });
+    removeSong = key => {
         
-        songs.forEach(s => {
-            if(s.id === songToRemove.id) {
-                console.log(1);
-              songs.push(s);
-            }
-        });
+        const songs = { ...this.state.songs };
 
-
-        this.setState({songs : songs});
+        songs[key] = null;
         
-        console.log(songs);
-        
-        console.log(this.state.songs);
+        this.setState({songs});
     }
 
     requestSong = song => {
