@@ -1,14 +1,17 @@
 import React from "react";
 import Header from './Header';
-import MusicChart from './MusicChart';
+import SongRequest from './SongRequest';
 import Song from './Song';
 import SampleSongs from '../SampleSongs';
 import base from '../base';
+import QRCodeImage from './QRCodeImage';
+import RoomPlayer from "./RoomPlayer";
 
 class App extends React.Component{
 
     state = {
-        songs: {}
+        songs: {},
+        currentlyPlaying: {}
     }
 
     componentDidMount() {
@@ -28,6 +31,17 @@ class App extends React.Component{
     loadSampleMusics = () => {
          this.setState({ songs: SampleSongs });
          console.log('musics');
+    }
+
+    playSong = key => {
+
+        const songs = { ...this.state.songs };
+
+        const currentlyPlaying = songs[key];
+        songs[key] = null;
+        
+        this.setState({songs});
+        this.setState({currentlyPlaying});
     }
 
     removeSong = key => {
@@ -51,19 +65,17 @@ class App extends React.Component{
 
     render(){
         return (
-            <div className="catch-of-the-day">
-                <div className="Menu">
-                    <Header tagline="Best karaoke room in town!"/>
-                    <ul className="fishes">
-                        {Object.keys(this.state.songs).map(key => <Song key={key} 
-                                                                        index={key} 
-                                                                        details={this.state.songs[key]} 
-                                                                        removeSong={this.removeSong}/>)}
-                    </ul>
+            <div>
+                <div className="catch-of-the-day">
+                    <RoomPlayer 
+                        songs={this.state.songs} 
+                        playSong={this.playSong} 
+                        removeSong={this.removeSong}/>
+                    <SongRequest 
+                        requestSong={this.requestSong}  
+                        loadSampleMusics={this.loadSampleMusics} />
+
                 </div>
-                <MusicChart 
-                    requestSong={this.requestSong}  
-                    loadSampleMusics={this.loadSampleMusics} />
             </div>
         )
     }

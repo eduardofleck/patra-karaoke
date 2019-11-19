@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddMusicForm extends React.Component{
+class AddSongForm extends React.Component{
 
     songRef = React.createRef();
     singerRef = React.createRef();
@@ -24,7 +24,7 @@ class AddMusicForm extends React.Component{
 
     render(){
         return (
-                <form onSubmit={this.requestSong}>
+                <form onSubmit={this.requestSong} className="song-request">
                     <input name="song" ref={this.songRef} type="text" placeholder="Song"/>
                     <input name="singer" ref={this.singerRef} type="text" placeholder="Singer"/>
                     <input name="name" ref={this.nameRef} type="text" placeholder="Name"/>
@@ -34,4 +34,4 @@ class AddMusicForm extends React.Component{
     }
 }
 
-export default AddMusicForm;
+export default AddSongForm;
