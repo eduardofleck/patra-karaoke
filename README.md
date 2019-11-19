@@ -1,7 +1,8 @@
 # patra-karaoke
 
 This is a React and Firebase project that aims to be a karaoke manager!
-The name of this project is a tribute to the Kafe Patra Klub in Prague, wich hosts karaoke nights every sunday.
+
+The name of this project is a tribute to the gay bar Patra in Prague, wich hosts karaoke nights every sunday.
 This is also a demonstration of support for all the gay community around the world.
 
 ## About
@@ -46,6 +47,15 @@ Having everything installed, you can run "npm start", and node will run the appl
 
 ```bash
 npm start
+```
+
+### Endpoints
+
+```bash
+/ # Index. Choses a room name and creates it. Navigates to the "Host" section afterwards.
+/room/<room-name> # "Singer" interface.
+/host/<room-name> # "Host" interface.
+/test/<room-name> # Opens the "Singer" and "Host" interfaces side by side.
 ```
 
 Let's sing!
