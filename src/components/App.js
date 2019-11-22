@@ -1,10 +1,7 @@
 import React from "react";
-import Header from './Header';
 import SongRequest from './SongRequest';
-import Song from './Song';
 import SampleSongs from '../SampleSongs';
 import base from '../base';
-import QRCodeImage from './QRCodeImage';
 import RoomPlayer from "./RoomPlayer";
 
 class App extends React.Component{
@@ -21,6 +18,11 @@ class App extends React.Component{
           context: this,
           state: "songs"
         });
+
+        this.ref = base.syncState(`${params.roomId}/currentlyPlaying`, {
+            context: this,
+            state: "currentlyPlaying"
+          });
       }
         
       componentWillUnmount() {
@@ -69,6 +71,7 @@ class App extends React.Component{
                 <div className="catch-of-the-day">
                     <RoomPlayer 
                         songs={this.state.songs} 
+                        currentlyPlaying={this.state.currentlyPlaying}
                         playSong={this.playSong} 
                         removeSong={this.removeSong}/>
                     <SongRequest 
