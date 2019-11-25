@@ -76,6 +76,7 @@ class App extends React.Component{
                         removeSong={this.removeSong}/>
                     <SongRequest 
                         requestSong={this.requestSong}  
+                        currentlyPlaying={this.state.currentlyPlaying}
                         loadSampleMusics={this.loadSampleMusics} />
 
                 </div>

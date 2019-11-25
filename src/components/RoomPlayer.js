@@ -12,7 +12,7 @@ class RoomPlayer extends React.Component{
             
                 <div className="Menu">
                     <Header tagline="Best karaoke room in town!"/>
-                    <SongPlayer currentlyPlaying={this.props.currentlyPlaying}></SongPlayer>
+                    <SongPlayer currentlyPlaying={this.props.currentlyPlaying}/>
                     <ul className="fishes">
                         {Object.keys(this.props.songs).map(key => <Song key={key} 
                                                                         index={key} 

@@ -13,20 +13,20 @@
   padding: 2rem 0 !important;
 }
 .qrcode-inner{
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 20px 20px;
   border: 2px solid #000000;
-  padding: 10px;
+  padding: 0px;
   background: #fff;
-  width: 170px;
-  height: 170px;
+  width: 145px;
+  height: 160px;
   /* color: #fff; */
 }
 .qrcode{
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 20px 20px;
   background: #000000;
   /* padding: 10px; */
-  width: 170px;
-  height: 205px;
+  width: 145px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
   color: #fff; 
@@ -267,6 +267,7 @@ h3,
 h4,
 h5,
 h6 {
+  text-align: center;
   font-weight: normal;
   font-family: 'haymakerregular', sans-serif;
 }
@@ -416,6 +417,17 @@ input#fold:checked + label {
   background: #fff;
   color: #000;
 } */
+.centered{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.currently-playing{
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 300px 75px;
+}
 
 .icon-song {
   max-width:100%;

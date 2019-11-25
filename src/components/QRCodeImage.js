@@ -6,7 +6,7 @@ class QRCodeImage extends React.Component{
     qrCodeDataRef = React.createRef();
     
     componentDidMount() {
-        QRCode.toDataURL(window.location.href)
+        QRCode.toDataURL(window.location.href, {margin:1})
         .then(url => {
             this.qrCodeDataRef = url;
         })
